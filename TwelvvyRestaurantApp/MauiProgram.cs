@@ -1,5 +1,6 @@
 ﻿using CommunityToolkit.Maui;
 using Microsoft.Extensions.Logging;
+using TwelvvyRestaurantApp.Data;
 
 namespace TwelvvyRestaurantApp
 {
@@ -19,6 +20,8 @@ namespace TwelvvyRestaurantApp
 
 #if DEBUG
             builder.Logging.AddDebug();
+
+            builder.Services.AddSingleton<DatabaseService>();
 #endif
 
             return builder.Build();
